@@ -1,0 +1,22 @@
+{
+  "name": "atlantis",
+  "version": "1.0.0",
+  "description": "React practice",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jessicargleason/atlantis.git"
+  },
+  "author": "Jessica Gleason",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jessicargleason/atlantis/issues"
+  },
+  "homepage": "https://github.com/jessicargleason/atlantis#readme",
+  "dependencies": {
+    "create-react-app": "^3.4.1"
+  }
+}

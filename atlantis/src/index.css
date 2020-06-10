@@ -1,0 +1,40 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(10,32px);
+  grid-template-rows: repeat(10,32px);
+}
+
+.square {
+  border: none;
+  background-image: url(./tf_A5_atlantisA.png);
+  background-position: 224px 1022px;
+  font-size: .7em;
+  border-radius: 0;
+}
+
+.square:nth-child(3n+2) {
+  background-position: 64px 992px;
+}
+
+.square:nth-child(7n+5) {
+  background-position: 547px 992px;
+}
+
+.square:hover {
+  background-color: yellow;
+  cursor: pointer;
+}
