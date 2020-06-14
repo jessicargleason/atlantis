@@ -30,11 +30,62 @@ code {
   background-position: 64px 992px;
 }
 
+.square:nth-child(5n+3) {
+  background-position: -218px 1456px;
+}
+
 .square:nth-child(7n+5) {
   background-position: 547px 992px;
 }
 
+.square:nth-child(11n+7) {
+  background-position: 342px 992px;
+}
+
 .square:hover {
-  background-color: yellow;
   cursor: pointer;
 }
+
+.square:focus {
+  outline: none;
+}
+
+.active {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  background-image: url(./mer_8_chars1.png);
+  background-position: -231px -5px;
+  border: none;
+  animation: float infinite 1s steps(1,end);
+}
+
+@keyframes float {
+  from {
+    background-position: -230px -5px;
+  }
+  25% {
+    background-position: -256px -5px;
+  }
+  50% {
+    background-position: -282px -5px;
+  }
+  75% {
+    background-position: -256px -5px;
+  }
+}
+/* 
+.square.pos-22 {
+  background-image: url(./tf_A5_atlantisA.png), url(./tf_A5_atlantisA.png);
+  background-position: 0px 896px, 224px 1022px;
+}
+
+.square.pos-23 {
+  background-image: url(./tf_A5_atlantisA.png), url(./tf_A5_atlantisA.png);
+  background-position: -33px 896px, 224px 1022px;
+}
+
+.square.pos-26 {
+  background-image: url(./tf_A5_atlantisA.png), url(./tf_A5_atlantisA.png);
+  background-position: -33px 896px, 224px 1022px;
+} */
