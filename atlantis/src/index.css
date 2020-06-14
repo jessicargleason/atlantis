@@ -24,6 +24,7 @@ code {
   font-size: .7em;
   border-radius: 0;
   background: transparent;
+  text-align: center;
 }
 
 .square:focus {
@@ -32,12 +33,24 @@ code {
 
 .active {
   display: inline-block;
-  width: 32px;
-  height: 32px;
-  background-image: url(./mer_8_chars1.png);
-  background-position: -231px -5px;
+  width: 19px;
+  height: 35px;
+  background-image: url(./pink-front.png);
+  background-repeat: no-repeat;
   border: none;
   animation: float infinite 1s steps(1,end);
+}
+
+.left {
+  background-image: url(./pink-left.png);
+}
+
+.right {
+  background-image: url(./pink-right.png);
+}
+
+.up {
+  background-image: url(./pink-up.png);
 }
 
 .arrows button  {
@@ -52,15 +65,15 @@ code {
 
 @keyframes float {
   from {
-    background-position: -230px -5px;
+    background-position: 0 0;
   }
   25% {
-    background-position: -256px -5px;
+    background-position: -26px 0;
   }
   50% {
-    background-position: -282px -5px;
+    background-position: -52px 0;
   }
   75% {
-    background-position: -256px -5px;
+    background-position: -26px 0;
   }
 }

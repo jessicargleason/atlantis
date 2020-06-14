@@ -28,7 +28,7 @@ for (let i=131; i < 199; i++) {
 
 function Contents(props) {
   return (
-    <span className={`${props.active ? "active" : ""}`}>{props.value}</span>
+    <span className={`${props.active ? "active " + props.direction : ""}`}>&nbsp;</span>
   )
 }
 
@@ -42,7 +42,7 @@ class Square extends React.Component {
     if  (thisSquare === activeSquare) {
       active = true;
     }
-    return <Contents value={contents} active={active} />;
+    return <Contents value={contents} active={active} direction={this.props.direction} />;
   }
 
   render() {
@@ -58,7 +58,8 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      activeSquare: 5
+      activeSquare: 5,
+      direction: "down"
     }
 
     this.handleKeyDown = this.handleKeyDown.bind(this);
@@ -96,15 +97,19 @@ class App extends React.Component {
      let newSquare = null;
      if (direction === "up") {
        newSquare = (active - 10);
+       this.setState({direction: "up"});
      }
      else if (direction === "down") {
        newSquare = (active + 10);
+       this.setState({direction: "down"});
      }
      else if (direction === "left") {
        newSquare = (active - 1);
+       this.setState({direction: "left"});
      }
      else if (direction === "right") {
        newSquare = (active + 1);
+       this.setState({direction: "right"});
      }
 
       if (newSquare > 0 && positions[newSquare].obstacle === false) {
@@ -124,7 +129,7 @@ class App extends React.Component {
       </div>
       <div className="grid">
         {Object.keys(positions).map((pos, i) => {
-          return <Square activeSquare={this.state.activeSquare} key={i} row={positions[pos].x} col={positions[pos].y} id={i} />
+          return <Square activeSquare={this.state.activeSquare} direction={this.state.direction} key={i} row={positions[pos].x} col={positions[pos].y} id={i} />
         })}               
       </div>
       <small>Tiles from <a href="http://finalbossblues.com/timefantasy/freebies/free-tileset-atlantis/">Time Fantasy</a></small>
