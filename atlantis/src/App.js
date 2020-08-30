@@ -124,10 +124,26 @@ class App extends React.Component {
     <div className="App">
       <div className="arrows">
         <span>Manual Controls</span><br />
-        <button onClick={() => this.doArrow("up")}>⬆</button>
-        <button onClick={() => this.doArrow("left")}>⬅</button>
-        <button onClick={() => this.doArrow("right")}>➡</button>
-        <button onClick={() => this.doArrow("down")}>⬇</button>
+        <button onClick={() => this.doArrow("up")}>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
+        </button>
+        <button onClick={() => this.doArrow("left")}>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+          </svg>
+        </button>
+        <button onClick={() => this.doArrow("right")}>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+        </svg>
+        </button>
+        <button onClick={() => this.doArrow("down")}>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+          </svg>
+        </button>
       </div>
       <div class="flex">
         <div className="grid">
