@@ -123,16 +123,24 @@ class App extends React.Component {
     return(
     <div className="App">
       <div className="arrows">
-        <button onClick={() => this.doArrow("up")}>⬆</button><br />
-        <button onClick={() => this.doArrow("left")}>⬅</button><button onClick={() => this.doArrow("right")}>➡</button><br />
+        <span>Manual Controls</span><br />
+        <button onClick={() => this.doArrow("up")}>⬆</button>
+        <button onClick={() => this.doArrow("left")}>⬅</button>
+        <button onClick={() => this.doArrow("right")}>➡</button>
         <button onClick={() => this.doArrow("down")}>⬇</button>
       </div>
-      <div className="grid">
-        {Object.keys(positions).map((pos, i) => {
-          return <Square activeSquare={this.state.activeSquare} direction={this.state.direction} key={i} row={positions[pos].x} col={positions[pos].y} id={i} />
-        })}               
+      <div class="flex">
+        <div className="grid">
+          {Object.keys(positions).map((pos, i) => {
+            return <Square activeSquare={this.state.activeSquare} direction={this.state.direction} key={i} row={positions[pos].x} col={positions[pos].y} id={i} />
+          })}               
+        </div>
+        <div class="copy">
+          <h1>React Atlantis</h1>
+          <p>You're looking at <a href="http://www.jessicagleason.com">Jessica's</a> project for practicing React in her spare time. Using tiles and sprites from pixel artist <a href="http://finalbossblues.com/timefantasy/freebies/free-tileset-atlantis/">Time Fantasy</a>, it creates a pixelated Atlantis that a mermaid (that's you!) can explore. This is a work in progress. <a href="https://github.com/jessicargleason/atlantis" target="_blank" rel="noopener noreferrer">The code can be found on GitHub.</a></p>
+          <p>Use arrow keys or control buttons to navigate.</p>
+        </div>
       </div>
-      <small>Tiles from <a href="http://finalbossblues.com/timefantasy/freebies/free-tileset-atlantis/">Time Fantasy</a></small>
     </div>
     )
    }
@@ -142,7 +150,7 @@ class App extends React.Component {
 function throttled(delay, fn) {
   let lastCall = 0;
   return function (...args) {
-    const now = (new Date).getTime();
+    const now = (new Date()).getTime();
     if (now - lastCall < delay) {
       return;
     }
