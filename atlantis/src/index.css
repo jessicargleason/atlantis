@@ -17,11 +17,13 @@ footer {
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(10,32px);
-  grid-template-rows: repeat(20,32px);
+  grid-template-columns: repeat(10,5vh);
+  grid-template-rows: repeat(20,5vh);
   background-image: url(./atlantis.png);
   background-repeat: no-repeat;
-  width: 320px;
+  background-size: cover;
+  /*width: calc(100vh / 2);*/
+  /*height: 100vh;*/
   margin: auto;
 }
 
@@ -100,7 +102,6 @@ footer {
   flex-direction: column-reverse;
   max-width: 1024px;
   margin: auto;
-  padding: 15px;
 }
 
 .copy {
@@ -112,6 +113,9 @@ footer {
 @media screen and (min-width: 768px) {
   .flex {
     flex-direction: row;
+    position: absolute;
+    top: 0;
+    bottom: 0;
   }
   .copy {
     font-size: 1.1em;
